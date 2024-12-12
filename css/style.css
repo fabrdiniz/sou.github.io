@@ -1,0 +1,1323 @@
+* {
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    scroll-behavior: smooth;
+    scroll-padding: 100px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Pro Bold';
+    src: url(../fontes/Bebas\ Neue\ Pro\ Bold.otf);
+}
+
+:root {
+    --cor-azul-escuro: #080c16;
+    --cor-cinza-claro: #c0c1c3;
+    --cor-cinza-escuro: #4b4b4b;
+    --cor-cinza-escuro2: #767676;
+    --cor-amarelo: #f9e633;
+    --cor-amarelo2: #ffd500;
+    --cor-verde-sou: #87c7bf;
+    --cor-branco: #ffffff;
+    --cor-preto: #000000;
+}
+
+.container__title {
+    font-family: "Bebas Neue Pro Bold", sans-serif;
+    font-size: 3rem;
+    color: var(--cor-cinza-claro);
+    letter-spacing: 3px;
+}
+
+.black {
+    color: var(--cor-preto);
+}
+
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--cor-azul-escuro);
+    padding-inline: 6rem;
+    padding-block: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+    img {
+        height: 100px;
+    }
+
+    .header__nav a {
+        text-transform: uppercase;
+        color: var(--cor-cinza-claro);
+        font-weight: 200;
+        margin-inline: 1.5rem;
+    }
+
+    /* Menu Hambúrguer */
+    .header__hamburger {
+        display: none;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+}
+
+/* Estilo Responsivo para Telas Menores (MENU) */
+@media (max-width: 1300px) {
+
+    .header {
+        padding-block: 1rem;
+
+        padding-inline: 20px;
+
+        a {
+            img {
+                height: 50px;
+            }
+        }
+
+        .header__nav {
+            position: absolute;
+            top: 30px;
+            right: 0;
+            width: 100%;
+            flex-direction: column;
+            background-color: var(--cor-azul-escuro);
+            display: none;
+            z-index: 1;
+            margin-top: 50px;
+        }
+
+        .header__nav a {
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+            font-size: 1.5rem;
+        }
+
+        .header__nav.open {
+            display: flex;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .header__hamburger {
+            color: var(--cor-cinza-claro);
+            display: block;
+        }
+    }
+}
+
+/* Animação Fade-In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* FIM HEADER */
+
+
+
+/* HERO */
+/* .hero {
+
+    img {
+        width: 100%;
+        margin-top: -10px;
+    }
+} */
+/* FIM HERO */
+
+/* HERO */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+
+    .parallax {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: fit-content;
+        height: 100%;
+        background-image:
+            linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 10%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.8) 100%),
+            url('../assets/banner-principal-v2.png');
+        background-size: cover;
+        background-position: center 20%;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .hero {
+        height: 80vh;
+    }
+
+    .hero .parallax {
+        background-position: center 40%;
+        background-attachment: scroll;
+    }
+}
+
+/* Para Smartphones Grandes */
+@media screen and (max-width: 1200px) {
+    .hero {
+        height: 60vh;
+    }
+
+    .hero .parallax {
+        background-position: center top;
+        background-attachment: scroll;
+    }
+}
+
+/* Para Smartphones Pequenos */
+@media screen and (max-width: 900px) {
+    .hero {
+        height: 50vh;
+    }
+
+    .hero .parallax {
+        background-position: center top;
+        background-attachment: scroll;
+    }
+}
+
+/* Para Smartphones Médios */
+@media screen and (max-width: 750px) {
+    .hero {
+        height: 40vh;
+    }
+
+    .hero .parallax {
+        background-position: center top;
+        background-attachment: scroll;
+    }
+}
+
+/* Para Smartphones Pequenos */
+@media screen and (max-width: 600px) {
+    .hero {
+        margin-top: 80px;
+        height: 35vh;
+    }
+
+    .hero .parallax {
+        background-position: center top;
+        background-attachment: scroll;
+    }
+}
+
+/* Para Telas Muito Pequenas */
+@media screen and (max-width: 500px) {
+    .hero {
+        height: 40vh;
+    }
+
+    .hero .parallax {
+        background-position: center top;
+        background-attachment: scroll;
+    }
+}
+
+/* Para Telas Muito Estreitas */
+@media screen and (max-width: 400px) {
+    .hero {
+        height: 35vh;
+    }
+
+    .hero .parallax {
+        background-position: center top;
+        background-attachment: scroll;
+    }
+}
+
+/* FIM HERO */
+
+
+/* QUEM SOMOS */
+.quem-somos {
+    display: flex;
+
+    .quem-somos__texto {
+        padding-left: 10rem;
+        padding-top: 5rem;
+
+        p {
+            margin-block: 3rem;
+            font-size: 1.5rem;
+            font-weight: 200;
+            width: 55%;
+        }
+
+        p.preto {
+            font-size: 2.5rem;
+            font-family: "Bebas Neue Pro Bold", sans-serif;
+            letter-spacing: 1px;
+
+            span.cinza {
+                font-size: 2.5rem;
+                font-family: "Bebas Neue Pro Bold", sans-serif;
+                color: var(--cor-cinza-escuro2);
+            }
+
+            span.amarelo {
+                font-size: 2.5rem;
+                font-family: "Bebas Neue Pro Bold", sans-serif;
+                color: var(--cor-amarelo2);
+            }
+        }
+    }
+
+    img {
+        margin-top: -10px;
+        z-index: -1;
+        height: fit-content;
+    }
+}
+
+/* FIM QUEM SOMOS */
+
+
+/* SELOS */
+.selos {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: -1px;
+    background-color: var(--cor-cinza-escuro);
+
+    img {
+        margin-top: -1px;
+        height: 550px;
+
+    }
+
+    .selos__texto {
+        padding-right: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        h1 {
+            text-align: right;
+        }
+
+        p {
+            color: var(--cor-branco);
+            width: 50%;
+            font-size: 1.3rem;
+            text-align: right;
+            margin-bottom: 75px;
+        }
+
+        .lista__selos {
+
+            img {
+                margin-left: 30px;
+                height: 90px;
+                transition: .5s;
+            }
+
+            img:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    .aspas {
+        padding-right: 100px;
+
+        img {
+            height: 150px;
+        }
+
+        p {
+            color: var(--cor-cinza-claro);
+            font-family: "Bebas Neue Pro Bold", sans-serif;
+            font-size: 2rem;
+            margin-block: 1.5rem;
+        }
+    }
+}
+
+/* FIM SELOS */
+
+
+/* CERTIFICADOS */
+.certificados {
+    display: flex;
+
+    .certificados__texto {
+        padding-left: 10rem;
+        padding-top: 5rem;
+
+        p {
+            margin-block: 3rem;
+            font-size: 1.5rem;
+            font-weight: 200;
+            width: 55%;
+        }
+
+        img {
+            height: 70px;
+        }
+
+        p.texto-garantia {
+            font-size: 1.2rem;
+            width: 25%;
+            margin-top: 10px;
+        }
+
+    }
+
+    img {
+        margin-top: -1px;
+        height: fit-content;
+    }
+}
+
+/* FIM CERTIFICADOS */
+
+
+/* SERVICOS */
+.servicos {
+    background-color: var(--cor-amarelo);
+    position: relative;
+
+
+    .servicos__texto {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+
+        .texto__esquerda {
+            width: 40%;
+            padding-left: 10rem;
+            padding-top: 5rem;
+
+            p {
+                margin-block: 3rem;
+                font-size: 1.5rem;
+                font-weight: 300;
+            }
+        }
+
+        .texto__direita {
+            margin-left: 100px;
+            margin-top: 50px;
+
+
+            p {
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .rodape__servicos {
+
+        img {
+            transform: scale(1.2);
+        }
+    }
+
+    .banner__lateral {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 25%;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: right
+    }
+}
+
+/* FIM SERVIÇOS */
+
+
+/* NOSSOS NÚMEROS */
+.numeros {
+    width: 100%;
+    position: relative;
+
+    .numeros__texto {
+        padding-left: 10rem;
+        padding-top: 5rem;
+
+        .numeros__list {
+            margin-top: 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            width: 70%;
+
+            .numeros__item {
+                color: var(--cor-cinza-claro);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                width: 30%;
+                margin-bottom: 2rem;
+
+                .numeros__item__title {
+                    font-size: 2.2rem;
+                    font-weight: 500;
+
+                }
+
+                .numeros__item__desc {
+                    font-size: 1.3rem;
+                    width: 95%;
+                }
+            }
+
+        }
+    }
+
+    .banner__lateral {
+        position: absolute;
+        top: 0;
+        right: 0;
+        overflow: hidden;
+
+        img {
+            margin-right: -100px;
+        }
+    }
+}
+
+.rodape__numeros {
+    background-color: var(--cor-cinza-escuro);
+
+    p {
+        text-align: center;
+        color: var(--cor-branco);
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+        font-size: 2rem;
+        font-weight: 200;
+    }
+
+    .carros {
+
+        a {
+
+            display: flex;
+            justify-content: space-evenly;
+            padding: 2.5rem;
+
+            img {
+                transition: .5s;
+                height: 140px;
+            }
+
+            img:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+/* FIM NUMEROS */
+
+
+/* RODAPE */
+.rodape {
+    width: 100%;
+    background-color: var(--cor-preto);
+
+    img {
+        width: 100%;
+    }
+
+    .rodape__infos {
+        padding-left: 10rem;
+        padding-block: 5rem;
+        display: flex;
+        align-items: center;
+
+
+        img {
+            width: fit-content;
+            height: 200px;
+        }
+
+        .rodape__textos {
+            color: var(--cor-cinza-claro);
+            margin-left: 3rem;
+            font-weight: 400;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: flex-end;
+
+
+            .tel {
+                display: flex;
+                align-items: center;
+
+                p {
+                    margin-left: 10px;
+                }
+            }
+
+            .rodape__social {
+                display: flex;
+                align-items: center;
+                margin-left: 3rem;
+
+                p {
+                    margin-inline: 10px;
+                    font-weight: 200;
+                }
+
+                i {
+                    font-size: 2.5rem;
+                }
+            }
+        }
+    }
+}
+
+/* FIM RODAPE */
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 1800px) {
+
+    .certificados {
+        display: flex;
+
+        .certificados__texto {
+            p {
+                width: 80%;
+            }
+
+            p.texto-garantia {
+                width: 30%;
+            }
+        }
+    }
+
+
+    .numeros {
+        .banner__lateral {
+            img {
+                margin-right: -200px;
+            }
+        }
+    }
+
+    .rodape__numeros {
+
+        .carros {
+            a {
+
+                background-color: var(--cor-cinza-escuro);
+                display: flex;
+                justify-content: space-evenly;
+                padding: 2.5rem;
+
+                img {
+                    transition: .5s;
+                    height: 140px;
+                }
+
+                img:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+
+
+
+}
+
+@media screen and (max-width: 1700px) {
+
+    .selos {
+        img.banner-selos {
+            margin-left: -100px;
+        }
+
+        .selos__texto {
+
+            p {
+                width: 90%;
+            }
+        }
+
+        .aspas {
+            width: 40%;
+
+            img {
+                height: 100px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1600px) {
+
+    .servicos {
+        .servicos__texto {
+
+            .texto__esquerda {
+                width: 40%;
+                padding-left: 10rem;
+                padding-top: 5rem;
+
+                p {
+                    margin-block: 3rem;
+                    font-size: 1.5rem;
+                    font-weight: 300;
+                }
+            }
+
+            .texto__direita {
+                margin-left: 60px;
+                margin-top: 50px;
+
+
+                p {
+                    font-size: 1.3rem;
+                    font-weight: 700;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        .rodape__servicos {
+
+            img {
+                margin-left: -10px;
+            }
+        }
+
+        .banner__lateral {
+            width: 20%;
+        }
+    }
+}
+
+@media screen and (max-width: 1500px) {
+
+    .selos {
+        img.banner-selos {
+            margin-left: -180px;
+        }
+
+        .selos__texto {
+            p {
+                width: 100%;
+            }
+        }
+
+        .aspas {
+            width: 40%;
+
+            img {
+                height: 100px;
+            }
+        }
+    }
+
+    .numeros {
+        .numeros__texto {
+            padding-left: 3rem;
+        }
+    }
+
+
+}
+
+
+@media screen and (max-width: 1600px) {
+
+    .quem-somos {
+        .quem-somos__texto {
+            p {
+                width: 85%;
+            }
+        }
+    }
+
+    .certificados {
+        .certificados__texto {
+            p {
+                width: 100%;
+            }
+
+            p.texto-garantia {
+                width: 60%;
+            }
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 1400px) {
+
+    .quem-somos {
+        overflow: hidden;
+
+        .quem-somos__texto {
+            p {
+                width: 100%;
+            }
+        }
+
+        img {
+            margin-right: -170px;
+        }
+    }
+
+    .servicos {
+        .rodape__servicos {
+            img {
+                transform: scale(.9);
+                margin-left: -55px;
+                margin-bottom: -15px;
+            }
+        }
+    }
+
+    .numeros {
+        .numeros__texto {
+            .numeros__list {
+                width: 65%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1300px) {
+
+    .servicos {
+        .banner__lateral {
+            display: none;
+        }
+
+        .servicos__texto {
+            width: 100%;
+
+            .texto__esquerda {
+                width: 50%;
+            }
+        }
+    }
+
+    .certificados {
+        .certificados__texto {
+            width: 80%;
+        }
+
+
+        img.banner-certificados {
+            display: none;
+        }
+    }
+
+    .numeros {
+        .numeros__texto {
+            padding-inline: 3rem;
+
+            .numeros__list {
+                justify-content: center;
+                width: 100%;
+            }
+        }
+
+        .banner__lateral {
+            display: none;
+        }
+    }
+
+    .rodape__numeros {
+
+        .carros {
+            a {
+
+                padding: 2rem;
+                
+                img {
+                    height: 100px;
+                }
+            }
+        }
+    }
+
+    .rodape {
+        .rodape__infos {
+            img {
+                height: 150px;
+            }
+
+            .rodape__textos {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+
+}
+
+
+@media screen and (max-width: 1200px) {
+
+    .quem-somos {
+        img {
+            margin-right: -240px;
+        }
+    }
+
+    .rodape {
+        .rodape__infos {
+            padding-left: 5rem;
+
+            img {
+                height: 130px;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 1100px) {
+
+    .quem-somos {
+        .quem-somos__texto {
+            padding-inline: 3rem;
+            padding-top: 3rem;
+        }
+
+
+        img {
+            display: none;
+        }
+    }
+
+    .selos {
+        flex-direction: column;
+
+        .selos__texto {
+            margin-top: 2rem;
+            margin-bottom: 5rem;
+            display: flex;
+            align-items: center;
+            padding-inline: 1.5rem;
+
+            .lista__selos {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+
+                img {
+                    height: 120px;
+                }
+            }
+
+            p {
+                text-align: center;
+                font-size: 1.8rem;
+            }
+
+        }
+
+        img.banner-selos {
+            display: none;
+        }
+
+        .aspas {
+            padding-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-right: 0;
+
+            img {
+                height: fit-content;
+                width: 25%;
+            }
+
+            p {
+                text-align: center;
+                font-size: 3rem;
+            }
+        }
+    }
+
+    .servicos {
+        .servicos__texto {
+            flex-direction: column;
+            width: 100%;
+
+            .texto__esquerda {
+                width: 100%;
+                padding-inline: 3rem;
+                padding-top: 3rem;
+            }
+
+            .texto__direita {
+                margin: 0;
+
+                p {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+
+        .rodape__servicos {
+            img {
+                transform: scale(.8);
+                margin-left: -120px;
+                margin-bottom: -25px;
+            }
+        }
+    }
+
+    .certificados {
+        .certificados__texto {
+            padding-top: 3rem;
+            padding-inline: 3rem;
+            width: 100%;
+
+            p.texto-garantia {
+                width: 30%;
+            }
+        }
+
+
+        img.banner-certificados {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width:1000px) {
+
+    .rodape {
+        .rodape__infos {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-left: 0;
+            padding-block: 3rem;
+
+            .rodape__textos {
+                font-size: 1.5rem;
+                margin-top: 1rem;
+                flex-direction: column;
+                margin-left: 0;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+
+                p {
+                    margin-block: 10px;
+                }
+
+                .tel {
+                    justify-content: center;
+                }
+
+                .rodape__social {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width:900px) {
+
+    .servicos {
+        .rodape__servicos {
+            display: none;
+        }
+    }
+
+    .rodape__numeros {
+        p {
+            font-size: 1.5rem;
+        }
+
+        .carros {
+            a {
+                img {
+                    height: 70px;
+                }
+            }
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 700px) {
+
+    .container__title {
+        font-size: 2.5rem;
+    }
+
+    .quem-somos {
+        .quem-somos__texto {
+            p {
+                margin-block: 1.3rem;
+                margin-bottom: 2.5rem;
+                font-size: 1.2rem;
+            }
+
+            p.preto {
+                font-size: 2rem;
+
+                span.cinza {
+                    font-size: 2rem;
+                }
+
+                span.amarelo {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+
+    .selos {
+        .selos__texto {
+            margin-bottom: 40px;
+
+            h1 {
+                text-align: center;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+            }
+
+            .lista__selos {
+                width: 80%;
+
+                img {
+                    margin-top: 20px;
+                }
+            }
+        }
+
+        .aspas {
+            display: none;
+        }
+    }
+
+    .certificados {
+        .certificados__texto {
+            p {
+                font-size: 1.2rem;
+            }
+
+            p.texto-garantia {
+                font-size: 1.2rem;
+                width: 60%;
+            }
+        }
+    }
+
+    .servicos {
+        .servicos__texto {
+            .texto__esquerda {
+                p {
+                    font-size: 1.2rem;
+                }
+            }
+
+            .texto__direita {
+                p {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+
+    .numeros {
+        .numeros__texto {
+            .numeros__list {
+                align-items: center;
+
+                .numeros__item {
+                    .numeros__item__title {
+                        font-size: 2rem;
+                    }
+
+                    .numeros__item__desc {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .rodape {
+        .rodape__infos {
+
+            .rodape__textos {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .selos {
+        .selos__texto {
+            margin-bottom: 40px;
+
+            p {
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+            }
+
+            .lista__selos {
+                width: 90%;
+
+                img {
+                    height: 100px;
+                }
+            }
+        }
+    }
+
+    .servicos {
+        .servicos__texto {
+            .texto__direita {
+                padding-inline: 3rem;
+                width: 100%;
+            }
+        }
+    }
+
+    .numeros {
+        .numeros__texto {
+            padding-top: 1rem;
+            padding-inline: 0;
+
+            h1 {
+                padding-left: 3rem;
+            }
+
+            .numeros__list {
+                .numeros__item {
+                    .numeros__item__title {
+                        font-size: 1.5rem;
+                    }
+
+                    .numeros__item__desc {
+                        font-size: .8rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .rodape__numeros {
+        p {
+            font-size: 1rem;
+            padding-top: 0;
+        }
+
+        .carros {
+            a {
+                img {
+                    height: 50px;
+                }
+            }
+        }
+    }
+
+    .rodape {
+        .rodape__infos {
+            img {
+                height: 100px;
+            }
+
+            .rodape__textos {
+                font-size: 1rem;
+            }
+        }
+    }
+
+}
+
+
+
+/* PROCESSO DE BLINDAGEM (VIDEOS) */
+.processo-blindagem {
+    background-color: var(--cor-preto);
+    color: var(--cor-branco);
+    padding: 5rem 2rem;
+    text-align: center;
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .video-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+
+        video {
+            width: 300px;
+            height: auto;
+            border: 2px solid var(--cor-cinza-claro);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+    }
+}
+
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .processo-blindagem h1 {
+        font-size: 2rem;
+    }
+
+    .video-container video {
+        width: 90%;
+    }
+}
+
+/* FIM PROCESSO DE BLINDAGEM */
