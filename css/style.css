@@ -133,126 +133,91 @@ a {
 
 /* FIM HEADER */
 
-
-
-/* HERO */
-/* .hero {
-
-    img {
-        width: 100%;
-        margin-top: -10px;
-    }
-} */
-/* FIM HERO */
-
 /* HERO */
 .hero {
     position: relative;
     height: 100vh;
     overflow: hidden;
-
-    .parallax {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: fit-content;
-        height: 100%;
-        background-image:
-            linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 10%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.8) 100%),
-            url('../assets/banner-principal-v2.png');
-        background-size: cover;
-        background-position: center 20%;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-    }
 }
 
-@media screen and (max-width: 1500px) {
+.slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    animation: slideShow 25s infinite;
+}
+
+.slide {
+    flex: 0 0 100%; /* Cada slide ocupa 100% da largura */
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Animação */
+@keyframes slideShow {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(0); }
+    25% { transform: translateX(-100%); }
+    45% { transform: translateX(-100%); }
+    50% { transform: translateX(-200%); }
+    70% { transform: translateX(-200%); }
+    75% { transform: translateX(-300%); }
+    95% { transform: translateX(-300%); }
+    100% { transform: translateX(-400%); }
+}
+
+/* RESPONSIVIDADE */
+
+/* Para telas menores que 1200px */
+@media screen and (max-width: 1200px) {
     .hero {
         height: 80vh;
     }
 
-    .hero .parallax {
-        background-position: center 40%;
-        background-attachment: scroll;
+    .slide {
+        background-position: center top; /* Ajusta o foco para o topo da imagem */
     }
 }
 
-/* Para Smartphones Grandes */
-@media screen and (max-width: 1200px) {
+/* Para telas menores que 900px */
+@media screen and (max-width: 900px) {
     .hero {
         height: 60vh;
     }
 
-    .hero .parallax {
-        background-position: center top;
-        background-attachment: scroll;
+    .slide {
+        background-position: center center;
     }
 }
 
-/* Para Smartphones Pequenos */
-@media screen and (max-width: 900px) {
+/* Para telas menores que 600px */
+@media screen and (max-width: 600px) {
     .hero {
         height: 50vh;
     }
 
-    .hero .parallax {
-        background-position: center top;
-        background-attachment: scroll;
+    .slide {
+        background-position: center center;
     }
 }
 
-/* Para Smartphones Médios */
-@media screen and (max-width: 750px) {
-    .hero {
-        height: 40vh;
-    }
-
-    .hero .parallax {
-        background-position: center top;
-        background-attachment: scroll;
-    }
-}
-
-/* Para Smartphones Pequenos */
-@media screen and (max-width: 600px) {
-    .hero {
-        margin-top: 80px;
-        height: 35vh;
-    }
-
-    .hero .parallax {
-        background-position: center top;
-        background-attachment: scroll;
-    }
-}
-
-/* Para Telas Muito Pequenas */
-@media screen and (max-width: 500px) {
-    .hero {
-        height: 40vh;
-    }
-
-    .hero .parallax {
-        background-position: center top;
-        background-attachment: scroll;
-    }
-}
-
-/* Para Telas Muito Estreitas */
+/* Para telas menores que 400px */
 @media screen and (max-width: 400px) {
     .hero {
-        height: 35vh;
+        height: 40vh;
     }
 
-    .hero .parallax {
-        background-position: center top;
-        background-attachment: scroll;
+    .slide {
+        background-position: center center;
+        background-size: contain; /* Evita cortes drásticos nas imagens */
     }
 }
 
-/* FIM HERO */
 
 
 /* QUEM SOMOS */
@@ -366,6 +331,7 @@ a {
 
 /* CERTIFICADOS */
 .certificados {
+    overflow: hidden;
     display: flex;
 
     .certificados__texto {
@@ -379,6 +345,10 @@ a {
             width: 55%;
         }
 
+        p.margem {
+            width: 90%;
+        }
+
         img {
             height: 70px;
         }
@@ -389,11 +359,27 @@ a {
             margin-top: 10px;
         }
 
+        img.certificado-sou {
+            height: 250px;
+
+        }
+
+        .alinhar__certificado {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-left: -20px;
+        }
+
     }
 
     img {
         margin-top: -1px;
         height: fit-content;
+    }
+
+    img.banner-certificados {
+        margin-right: -100px;
     }
 }
 
@@ -1010,7 +996,24 @@ a {
             width: 100%;
 
             p.texto-garantia {
-                width: 30%;
+                width: 40%;
+            }
+
+            .alinhar__certificado {
+                flex-direction: column;
+
+                img.certificado-sou {
+                    height: 400px;
+                }
+
+                .container__garantia {
+                    text-align: center;
+                    margin-block: 1rem;
+
+                    p {
+                        margin: 0 auto;
+                    }
+                }
             }
         }
 
@@ -1018,6 +1021,8 @@ a {
         img.banner-certificados {
             display: none;
         }
+
+
     }
 }
 
@@ -1142,6 +1147,10 @@ a {
         .certificados__texto {
             p {
                 font-size: 1.2rem;
+            }
+
+            p.margem {
+                width: 100%;
             }
 
             p.texto-garantia {
