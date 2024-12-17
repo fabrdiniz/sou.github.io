@@ -151,7 +151,7 @@ a {
 }
 
 .slide {
-    flex: 0 0 100%; /* Cada slide ocupa 100% da largura */
+    flex: 0 0 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
@@ -161,14 +161,11 @@ a {
 /* Animação */
 @keyframes slideShow {
     0% { transform: translateX(0); }
-    20% { transform: translateX(0); }
-    25% { transform: translateX(-100%); }
-    45% { transform: translateX(-100%); }
-    50% { transform: translateX(-200%); }
+    30% { transform: translateX(0); }
+    35% { transform: translateX(-100%); }
+    65% { transform: translateX(-100%); }
     70% { transform: translateX(-200%); }
-    75% { transform: translateX(-300%); }
-    95% { transform: translateX(-300%); }
-    100% { transform: translateX(-400%); }
+    100% { transform: translateX(-200%); }
 }
 
 /* RESPONSIVIDADE */
@@ -180,7 +177,7 @@ a {
     }
 
     .slide {
-        background-position: center top; /* Ajusta o foco para o topo da imagem */
+        background-position: center top;
     }
 }
 
@@ -210,11 +207,12 @@ a {
 @media screen and (max-width: 400px) {
     .hero {
         height: 40vh;
+        margin-top: 40px;
     }
 
     .slide {
         background-position: center center;
-        background-size: contain; /* Evita cortes drásticos nas imagens */
+        background-size: contain;
     }
 }
 
@@ -1094,6 +1092,8 @@ a {
     }
 
     .quem-somos {
+        margin-top: -50px;
+
         .quem-somos__texto {
             p {
                 margin-block: 1.3rem;
@@ -1130,10 +1130,12 @@ a {
             }
 
             .lista__selos {
-                width: 80%;
+                width: 90%;
 
                 img {
                     margin-top: 20px;
+                    padding-inline: 15px;
+                    margin-left: 0;
                 }
             }
         }
