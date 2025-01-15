@@ -416,6 +416,7 @@ a {
                 font-size: 1.5rem;
                 font-weight: 700;
                 margin-bottom: 20px;
+                text-decoration: underline;
             }
         }
     }
@@ -576,6 +577,7 @@ a {
                 p {
                     margin-inline: 10px;
                     font-weight: 200;
+                    text-decoration: underline;
                 }
 
                 i {

@@ -1,0 +1,80 @@
+.aba-servicos {
+    margin-top: 100px;
+    padding-left: 10rem;
+    padding-top: 5rem;
+
+    .title-servicos {
+        
+    }
+
+    .servicos-list {
+        
+        h2 {
+            margin-top: 30px;
+            font-size: 1.8rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+            font-weight: 200;
+            width: 75%;
+            margin-top: 15px;
+            margin-bottom: 50px;
+        }
+    }
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .aba-servicos {
+        padding-left: 5rem;
+        padding-top: 3rem;
+
+        .servicos-list {
+            h2 {
+                font-size: 1.6rem;
+            }
+    
+            p {
+                font-size: 1.3rem;
+                width: 70%;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .aba-servicos {
+        padding-left: 3rem;
+        padding-top: 2rem;
+
+        .servicos-list {
+            h2 {
+                font-size: 1.4rem;
+            }
+    
+            p {
+                font-size: 1.2rem;
+                width: 85%;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .aba-servicos {
+        padding-left: 1.5rem;
+        padding-top: 1rem;
+
+        .servicos-list {
+            h2 {
+                font-size: 1.2rem;
+            }
+    
+            p {
+                font-size: 1rem;
+                width: 100%;
+            }
+        }
+    }
+}

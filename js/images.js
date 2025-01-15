@@ -13,6 +13,9 @@ const images = [
     "./assets/galeria/11.jpg",
     "./assets/galeria/12.jpeg",
     "./assets/galeria/13.jpeg",
+    "./assets/galeria/14.jpeg",
+    "./assets/galeria/15.jpeg",
+    "./assets/galeria/16.jpeg",
 ];
 
 // Seletores
